@@ -29,16 +29,17 @@ function TextForm(props){
 <div className="mb-3">
   <textarea className="form-control" value={text} onChange={handleOnchange} style={{background: props.mode==='light'?'white':'grey'}}  id="mybox" rows="8"></textarea>
         </div>      
-<button className="button btn btn-primary mx-1" onClick={handleUpclick}>convert to UPPERcase</button>
-<button className="button btn btn-primary mx-2" onClick={handleLoclick}>convert to LOWERcase</button>
+<button disabled={text.length===0} className="button btn btn-primary mx-1 my-1" onClick={handleUpclick}>convert to UPPERcase</button>
+<button disabled={text.length===0} className="button btn btn-primary mx-2 my-1" onClick={handleLoclick}>convert to LOWERcase</button>
 </div>
 <div className="container">
 <h2>
     your text $ummary
 
 </h2>
-<p>{text.split(" ").length} words and { text.length} characters </p>
-<p>{0.008 * text.split(" ").length} Minutes read</p>
+<p>{text.split(/\s+/).filter((element)=>{ return element.length!==0
+}).length} words and { text.length} characters </p>
+<p>{0.008 * text.split(/\s+/).length} Minutes read</p>
 <h2> Preview</h2>
 <p>{text.length>0? text:"Enter something to preview it"}</p>
 </div>
