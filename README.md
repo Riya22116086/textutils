@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+$ite is live at https://riya26-tetrifox.github.io/reacthai1/
 
 ## Available Scripts
 
